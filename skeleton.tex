@@ -1,0 +1,229 @@
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass{article}
+
+\usepackage{imta_core}
+\usepackage{imta_extra}
+\usepackage[utf8]{inputenc}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsmath,mathtools}
+
+\usepackage[francais]{babel}
+% \usepackage{bibtex}
+
+\author{Wanhuazhu FENG \\ Wei GE \\ Yi QIAO \\ Ruonan WANG \\ Xinyi ZENG}
+
+\date{Février 2018}
+\title{Projet QuantLib}
+\subtitle{Encadrant : \\ Luigi BALLABIO \\ Didier GUERIOT}
+
+\imtaSetIMTStyle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%% BEGINNING %%%%%%%%%% 
+\begin{document}
+
+\imtaMaketitlepage
+
+\tableofcontents
+
+\newpage
+
+\section{Problématique}
+Pour valoriser une option, il y a 3 méthodes principales : l’arbre binomial (multinomial), la formule $ Black \& Sholes $, et la simulation de Monte-Carlo. La méthode de $ B\&S $ est plus rapide à calculer, mais elle ne peut pas traiter l’option américaine, et elle repose sur l'hypothèse que la volatilité est toujours constante. La simulation de Monte-Carlo peut être appliquée à toutes les situations, y compris les scénarios extrêmes, mais il y a un coût informatique très important et ça prend trop de temps pour réaliser les simulations exhaustives. La méthode de l’arbre binomial est rapide et flexible, elle peut valoriser l’option européenne et l’option américaine, même si elle n’a pas de valeurs extrêmes sur les pas intermédiaires. Cependant, pour la méthode de l’arbre binomial, il y a un problème sur sa discontinuité et son oscillation. C’est-à-dire, quand sa courbe converge vers le vrai prix, elle n’est pas monotone, par contre elle est oscillante. Selon le graphe \ref{fig:discon}, nous pouvons constater clairement qu'il y a un point discret au strike pour la courbe de l’arbre binomial, pour la méthode de $ B\&S $, la courbe est continuée. Le but de notre projet est de réduire l'oscillation de la valorisation de l'option américaine en appliquant l'arbre binomial. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]
+{Discontinuite.png}
+\caption{La discontinuité de la méthode d'arbre binomial, comparée avec la méthode B\&S}
+\label{fig:discon}
+\end{figure}
+
+\newpage
+
+\section{Solution théorique}
+Pour résoudre le problème ci-dessus, Broadie et Detemple (1996) ont proposé d’appliquer le prix (ou le payoffs) calculé par la formule B\&S aux nœuds pénultièmes dans la méthode de l’arbre binomial. C’est-à-dire, nous pouvons considérer que la période jusqu’avant la maturité est une option européenne, donc nous la calculons par la formule B\&S. Cela nous permet d’améliorer la précision du prix d’option et aussi de lisser l’oscillation de valorisation quand le temps approche à la maturité. La solution peut être acceptée, car il n’y a pas d’exercice entre les nœuds pénultièmes et les noeuds de la maturité.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]
+{arbre.png}
+\caption{Présentation de l'arbre binomiale}
+\label{fig:ab}
+\end{figure}
+
+\newpage
+
+\section{Solution pratique proposée}
+
+Dans le but de lisser l’oscillation de valorisation d’une option selon le nombre de périodes (TimeStep) en utilisant un arbre binomial,  nous nous proposons de réaliser l’implémentation suivante.\\
+
+Dans le constructeur de la classe \imtaInlinecode{c++}{BinomialVanillaEngine}, nous allons ajouter un paramètre booléen afin de choisir la méthode de pricing. Si celui-ci vaut \imtaInlinecode{c++}{true}, alors nous procéderons au lissage.\\
+
+Dans le corps de cette classe, il existe déjà un processus de \(Black \& Scholes\) qui prend tous les paramètres nécessaires (\(S_{0}\), \(r\), \(\sigma\), maturité \(T\) et strike \(K\)) pour calculer le prix théorique de l’option. Pour le cas où nous devons remplacer le prix de l’option pour la période juste avant la maturité en utilisant le modèle \(B\&S\), nous allons créer ce nouveau processus \(B\&S\) qui garde tous les paramètres comme avant sauf le \(S\) (sous-jacent) et la maturité, car nous pouvons considérer que la maturité de l’option de ces avant-derniers nœuds est la longueur d’une période (\imtaInlinecode{c++}{grid.dt(timeSteps_ - 1)}). Pour récupérer leur sous-jacent, nous allons directement parcourir l’arbre (\imtaInlinecode{c++}{lattice -> underlying (timeSteps_ - 1, i)}). Une fois que nous aurons obtenu toutes ces valeurs, nous allons appliquer le processus \(B\&S\) pour calculer le prix de l’option de ces avant-derniers nœuds afin de remplacer les valeurs originales sur l’arbre. Ensuite, nous pourrons refaire le \imtaInlinecode{c++}{rollback} à partir de cette avant-dernière couche pour calculer le prix de l’option à l’instant \(t_{0}\).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=.7\linewidth]
+{timesteps.png}
+\caption{Présentation de timeSteps}
+\label{fig:tsp}
+\end{figure}
+
+
+Par exemple, pour un arbre avec 4 time steps (\imtaInlinecode{c++}{ Size timeSteps_ = 4}) comme le figure ci-dessus, nous pouvons constater que la couche avant dernière couche est Step3 (\imtaInlinecode{c++}{timeSteps_ - 1 = 3}), nous avons utilisé \imtaInlinecode{c++}{grid[timeSteps_-1]} pour représenter cet instant. Nous avons retiré le sous-jacent de ce moment en appliquant cette méthode. Dans cet instant, il y a 4 nœuds pénultièmes. Pour parcourir chaque noeuds, nous avons besoin d’utiliser \imtaInlinecode{c++}{lattice -> size(timeSteps_-1)} pour représenter le nombre de noeuds dans cette couche.
+
+\newpage
+
+\section{Résultat obtenu}
+
+Nous avons lancé 10 itérations pour tester l'effet de l’oscillation selon les arbres binomiaux en appliquant les valeurs de paramètre de marché dans la figure suivante : 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=.7\linewidth]
+{optionParam.png}
+\caption{Présentation de timeSteps}
+\label{fig:tsp}
+\end{figure}
+
+Selon notre résultat, nous avons constaté que la méthode du lissage \(B\&S\) peut réussir à diminuer l’effet de l’oscillation pour chaque type d’arbre. Cependant, pour les arbres construits par la méthode de $ Joshi $ et de $ Leisen Reimer $, leur résultat de lissage n’est pas assez idéal, car il y a encore une petite vibration. Pour les autres types d’arbre, il y a une amélioration évidente sur l’effet de l’oscillation, leur prix de l’option sont presque stable à une valeur constante, c’est-à-dire que leur prix a déjà convergé et il n’y a plus d’oscillation. 
+
+
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.7\linewidth, scale=0.2]
+{CRR.png}
+\caption{Résultat d'exécution}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.7\linewidth, scale=0.2]
+{CR.png}
+\caption{Présentation graphique}
+\end{subfigure}
+\caption{Comparaison de valorisation sans et avec lissage --- CoxRossRobinstein}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.7\linewidth, scale=0.2]
+{JR.png}
+\caption{Résultat d'exécution}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.7\linewidth, scale=0.2]
+{JRo.png}
+\caption{Présentation graphique}
+\end{subfigure}
+\caption{Comparaison de valorisation sans et avec lissage --- JarrowRudd}
+\end{figure}
+
+
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.7\linewidth, scale=0.2]
+{EQPB.png}
+\caption{Résultat d'exécution}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.7\linewidth, scale=0.2]
+{Additive.png}
+\caption{Présentation graphique}
+\end{subfigure}
+\caption{Comparaison de valorisation sans et avec lissage --- AdditiveEQPBinomialTree}
+\end{figure}
+
+
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.7\linewidth, scale=0.2]
+{TRIGEORGIS.png}
+\caption{Résultat d'exécution}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.7\linewidth, scale=0.2]
+{Trigeor.png}
+\caption{Présentation graphique}
+\end{subfigure}
+\caption{Comparaison de valorisation sans et avec lissage --- Trigeorgis}
+\end{figure}
+
+
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.7\linewidth, scale=0.2]
+{Tian.png}
+\caption{Résultat d'exécution}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.7\linewidth, scale=0.2]
+{Tia.png}
+\caption{Présentation graphique}
+\end{subfigure}
+\caption{Comparaison de valorisation sans et avec lissage --- Tian}
+\end{figure}
+
+
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.7\linewidth, scale=0.2]
+{Joshi.png}
+\caption{Résultat d'exécution}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.7\linewidth, scale=0.2]
+{Josh.png}
+\caption{Présentation graphique}
+\end{subfigure}
+\caption{Comparaison de valorisation sans et avec lissage --- Joshi4}
+\end{figure}
+
+
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.7\linewidth, scale=0.2]
+{LEISEN.png}
+\caption{Résultat d'exécution}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.7\linewidth, scale=0.2]
+{Leisen_Reimer.png}
+\caption{Présentation graphique}
+\end{subfigure}
+\caption{Comparaison de valorisation sans et avec lissage --- LeisenReimer}
+\end{figure}
+
+\end{document}
+%%%%%%%%%% END %%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%% 

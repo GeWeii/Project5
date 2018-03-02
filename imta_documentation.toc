@@ -1,0 +1,42 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Core features: \texttt {imta\_core}}{4}{chapter.1}
+\contentsline {section}{\numberline {1.1}Introduction}{5}{section.1.1}
+\contentsline {section}{\numberline {1.2}Set up}{5}{section.1.2}
+\contentsline {section}{\numberline {1.3}Sectioning}{5}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}\texttt {imtaQuestion} and \texttt {imtaQuestionReset}}{5}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}\texttt {subsubsubsection}}{5}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}\texttt {chapter}}{5}{subsection.1.3.3}
+\contentsline {section}{\numberline {1.4}Document styling}{5}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}IMT Atlantique styling}{5}{subsection.1.4.1}
+\contentsline {subsubsection}{\numberline {1.4.1.1}Colors}{5}{subsubsection.1.4.1.1}
+\contentsline {subsubsection}{\numberline {1.4.1.2}\texttt {imtaSetIMTStyle}}{6}{subsubsection.1.4.1.2}
+\contentsline {subsubsection}{\numberline {1.4.1.3}The IMT Atlantique logo with \texttt {imtaLogo} and \texttt {imtaLogoTikz}}{6}{subsubsection.1.4.1.3}
+\contentsline {subsubsection}{\numberline {1.4.1.4}Front cover}{7}{subsubsection.1.4.1.4}
+\contentsline {subsubsection}{\numberline {1.4.1.5}Back cover}{7}{subsubsection.1.4.1.5}
+\contentsline {section}{\numberline {1.5}External dependancies}{7}{section.1.5}
+\contentsline {subsection}{\numberline {1.5.1}\texttt {geometry}}{7}{subsection.1.5.1}
+\contentsline {subsection}{\numberline {1.5.2}\texttt {graphicx}}{7}{subsection.1.5.2}
+\contentsline {subsection}{\numberline {1.5.3}\texttt {fontenc}}{8}{subsection.1.5.3}
+\contentsline {subsection}{\numberline {1.5.4}\texttt {hyperref}}{8}{subsection.1.5.4}
+\contentsline {subsection}{\numberline {1.5.5}\texttt {inputenc}}{8}{subsection.1.5.5}
+\contentsline {subsection}{\numberline {1.5.6}\texttt {fancyhdr}}{8}{subsection.1.5.6}
+\contentsline {subsection}{\numberline {1.5.7}\texttt {tikz}}{8}{subsection.1.5.7}
+\contentsline {subsection}{\numberline {1.5.8}\texttt {titlesec}}{8}{subsection.1.5.8}
+\contentsline {subsection}{\numberline {1.5.9}\texttt {titling}}{8}{subsection.1.5.9}
+\contentsline {subsection}{\numberline {1.5.10}\texttt {anyfontsize}}{8}{subsection.1.5.10}
+\contentsline {subsection}{\numberline {1.5.11}\texttt {sectsty}}{8}{subsection.1.5.11}
+\contentsline {subsection}{\numberline {1.5.12}\texttt {etoolbox}}{9}{subsection.1.5.12}
+\contentsline {subsection}{\numberline {1.5.13}\texttt {hyphenat}}{9}{subsection.1.5.13}
+\contentsline {subsection}{\numberline {1.5.14}\texttt {footmisc}}{9}{subsection.1.5.14}
+\contentsline {chapter}{\numberline {2}Additional features: \texttt {imta\_extra}}{10}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introduction}{11}{section.2.1}
+\contentsline {section}{\numberline {2.2}Set up}{11}{section.2.2}
+\contentsline {section}{\numberline {2.3}Document Styling}{11}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Code Colouring}{11}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Structuring List of Figures and Tables}{11}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Page numbering}{11}{subsection.2.3.3}
+\contentsline {section}{\numberline {2.4}External dependancies}{11}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}\texttt {anyfontsize}}{11}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}\texttt {imta\_core}}{11}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}\texttt {mdframed}}{11}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.4}\texttt {minted}}{11}{subsection.2.4.4}
