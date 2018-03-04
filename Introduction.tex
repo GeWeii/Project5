@@ -1,6 +1,17 @@
 
 \section{Introduction}
 
+Dans le marché financier, il est très important de faire des analyses sur la portefeuille d'instrument pour optimiser le PnL global. Cependant, nous avons aussi tenu compte des risques liés aux opérations financières. Dans le cadre de notre projet, nous avons étudié sur la portefeuille d'actifs et nous avons utilisé les données historiques pour prédire le rendement dans un horizon prédéfini.
+
+L’objetif de ce rapport est pour vous présenter notre projet en détaill. Il y a 5 parties dans ce rapport en global. D’abord, nous avons expliqué le context du projet, nous avons montré notre problématique et les données fournies par nos encadrants. Et puis, nous avons pris le modèle de réseaux neurones pour réaliser la prédiction, donc nous avons discuter sur la construction de la base d’apprentissage et les paramètres du modèle. Nous avons présenté nos résultats par scénario dans la troisième partie et aussi nous avons évalué notre modèle par les indicateurs statistiques. Dans la partie suivante, nous avons donné des points à améliorer pour la continuation de ce projet. A la fin, il y a une conclusion synthétique. 
+
+
 \subsection{Problématique}
 
+Un portefeuille d'actifs est construit par plein d'actions avec les pois différents, les actions sont impacté par plusieurs facteurs comme le secteur, le pays, etc. Pour gérer un portefeuille d'actifs, l'objectif est de maximiser le rendement global, c'est-à-dire qu'il faut être capable de faire la décision d'acheter ou de vendre des actions pour optimiser le rendement de chaque action. Dans le cadre de notre projet, nous avons besoin d’optimiser d'un portefeuille CAC40. Comme les séries temporelles sont non stationnaires, donc il est très difficile de faire la prédiction pour chaque période.
+
 \subsection{Présentation de données}
+
+Le portefeuille CAC40 est construit par 49 actions françaises et chaque action a ses comportements complètement différents. Nous avons un fichier qui contient le prix (ouverture, clôture, haut, bas) de chaque action pendant presque 15 ans (2000-2015). Pour une série temporelle, si nous avons pris une période trop courte, nous n'avons pas assez d'informations pour faire la prédiction. Par contre, elle n'a pas une forte corrélation pendant une longue période, les données très anciennes ne sont pas utile de prédire la situation actuelle.
+
+Nous avons aussi un fichiers ayant les 13 « technical indicators » calculés à partir de ces séries temporelles. Les TIs se sont situés dans 4 catégories : le volume, la volatilité, la tendance, le momentum. Dans un premier temps, nous avons pris tous les 13 TIs, et puis nous avons étudié la corrélation entre eux pour diminuer le nombre de TIs. 
