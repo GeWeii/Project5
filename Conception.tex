@@ -1,8 +1,25 @@
 
 
-\section{Conception et développement de modèle d'apprentissage}
+\section{Conception et développement de modèle}
+
+Nous avons trouvé qu’il y a déjà beaucoup de projets sur la prédiction d’une séries temporelle financière. Pour atteindre notre objectif, nous avons proposé le modèle de réseaux neurones pour faire la prédiction. L’entrée et la sortie de notre projet sont très différentes par rapport aux autres projets. Les entrées sont les 13 TIs, comme nous savions plus de TIs peuvent apporteer plus d’informations, mais il y a aussi plus de risks d’avoir trop de redondance. La sortie est le rendemnent sur un horizon prédefini, c’est plus difficile de prédire la vraie valeur que la tendance (mettre une seuil d’achat ou de vente).
 
 \subsection{Construction de la base d’apprentissage}
+
+Pré-traitement de données : 
+
+Comme nous avons pris un apprentissage supervisé, nous avons besoin d’abord d’ajouter les labels pour nos exemples, c’est-à-dire nous avons calculé le rendement sur un horizon pour chaque exemple.
+
+Dans un premier temps, nous avons utilisé directement les données non normalisées, parce que nous avions considéré que notre modèle peut ajuster les valeurs par lui-même. Cependant, quand nous avons fait le premier test sur les données non normalisé, nous avons trouvé que le résultat n’était pas idéal. Le système n’a donné que un constant négatif et un constant positif comme le résultat, il n’a pas fait une l’approchement avec la vraie valeur. Ensuite, nous avons fait une normalisation sur les entrées et nous avons pris le formulaire $(V-V_{min})/(V_{max}-V_{min})$, c’est-à-dire que nous avons mis toutes les valeus de l’entrée sur la fourchette de [0,1]. Après la normalisation, nous pouvons trouver que le résultat était mieux.
+
+Paramétrage de la base de données : 
+
+Pour notre projet, il faut aussi varier sur les paramètres différents pour construire la base d'apprentissage. Principalement, nous avons pris 4 indicateurs pour mesurer notre système, ils sont l'horizon, la taille d'apprentissage, la durée du test et le nombre de TI.
+
+Pour lancer les simulations différentes, nous avons d'abord changé seulement un indicateur sur les tests. Et puis, nous avons testé sur le cas où nous pouvons changer 2 ou 3 indicateurs. 
+
+Nous avons pris tous les 13 TI au début de notre projet, nous voudrons combiner plus d’information pour faire la prédiction, nous avons considéré que cette combinaison de TI est plus robuste. Ensuite, nous avons diminué le nombre de TI pour savoir le performance de notre système. Nous avons refait les tests avec la dimension réduite de TI.
+
    	
 \subsection{Choix du modèle}
 
