@@ -1,5 +1,0 @@
-\select@language {french}
-\contentsline {section}{\numberline {1}Probl\IeC {\'e}matique}{3}{section.1}
-\contentsline {section}{\numberline {2}Solution th\IeC {\'e}orique}{4}{section.2}
-\contentsline {section}{\numberline {3}Solution pratique propos\IeC {\'e}e}{5}{section.3}
-\contentsline {section}{\numberline {4}R\IeC {\'e}sultat obtenu}{6}{section.4}

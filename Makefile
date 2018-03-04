@@ -1,6 +1,6 @@
-documentation: skeleton.tex
-	pdflatex -shell-escape skeleton.tex
-	pdflatex -shell-escape skeleton.tex
+documentation: report_S5.tex
+	pdflatex -shell-escape report_S5.tex
+	pdflatex -shell-escape report_S5.tex
 
 clean:
 	rm *.aux

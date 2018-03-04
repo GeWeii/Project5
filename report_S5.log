@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.8.20)  20 FEB 2018 16:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.8.20)  4 MAR 2018 16:01
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
-**skeleton.tex
-(./skeleton.tex
+**report_S5.tex
+(./report_S5.tex
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
@@ -1124,11 +1124,11 @@ Package: ifplatform 2010/10/22 v0.4 Testing for the operating system
 (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/catchfile.sty
 Package: catchfile 2016/05/16 v1.7 Catch the contents of a file (HO)
 )
-runsystem(uname -s > "skeleton.w18")...executed.
+runsystem(uname -s > "report_S5.w18")...executed.
 
 
-(./skeleton.w18)
-runsystem(rm -- "skeleton.w18")...executed.
+(./report_S5.w18)
+runsystem(rm -- "report_S5.w18")...executed.
 
 )
 (/usr/local/texlive/2017/texmf-dist/tex/generic/xstring/xstring.sty
@@ -1155,7 +1155,7 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \@float@every@listing=\toks35
 \c@listing=\count148
 )
-runsystem(mkdir -p _minted-skeleton)...executed.
+runsystem(mkdir -p _minted-report_S5)...executed.
 
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/mdframed/mdframed.sty
@@ -1536,40 +1536,35 @@ Package frenchb.ldf Warning: Please load the "subcaption" package
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/helvet.sty
 Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
 )
-runsystem(which pygmentize && touch skeleton.aex)...executed.
+runsystem(which pygmentize && touch report_S5.aex)...executed.
 
-runsystem(rm skeleton.aex)...executed.
+runsystem(rm report_S5.aex)...executed.
 
 
-(./skeleton.aux
+(./report_S5.aux)
+\openout1 = `report_S5.aux'.
 
-LaTeX Warning: Label `fig:tsp' multiply defined.
-
-)
-\openout1 = `skeleton.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 26.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 25.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 26.
-
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 25.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
@@ -1638,7 +1633,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box70
-Package hyperref Info: Link coloring OFF on input line 26.
+Package hyperref Info: Link coloring OFF on input line 25.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1648,20 +1643,20 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count293
 )
-LaTeX Info: Redefining \ref on input line 26.
-LaTeX Info: Redefining \pageref on input line 26.
-LaTeX Info: Redefining \nameref on input line 26.
+LaTeX Info: Redefining \ref on input line 25.
+LaTeX Info: Redefining \pageref on input line 25.
+LaTeX Info: Redefining \nameref on input line 25.
 
-(./skeleton.out) (./skeleton.out)
+(./report_S5.out) (./report_S5.out)
 \@outlinefile=\write7
-\openout7 = `skeleton.out'.
+\openout7 = `report_S5.out'.
 
  ABD: EveryShipout initializing macros
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \degres on input line 26.
-LaTeX Info: Redefining \dots on input line 26.
-LaTeX Info: Redefining \up on input line 26.
+LaTeX Info: Redefining \degres on input line 25.
+LaTeX Info: Redefining \dots on input line 25.
+LaTeX Info: Redefining \up on input line 25.
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -1695,14 +1690,19 @@ LaTeX Info: Redefining \up on input line 26.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-Overfull \hbox (6.66595pt too wide) in paragraph at lines 28--28
+Overfull \hbox (6.66595pt too wide) in paragraph at lines 27--27
  []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--27
+
  []
 
 \imta@remainingWidth=\skip145
 \imta@picWidth=\skip146
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <19.5> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 28.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 27.
 \c@imta@idx=\count294
 [1
 
@@ -1710,237 +1710,55 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <19.5> not available
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 30.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 29.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 30.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 29.
 
-(./skeleton.toc
+(./report_S5.toc
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 2.
 )
 \tf@toc=\write8
-\openout8 = `skeleton.toc'.
+\openout8 = `report_S5.toc'.
 
  [2
 
 
-]
-Overfull \hbox (18.0923pt too wide) in paragraph at lines 35--36
-[]\T1/phv/m/n/10 Pour va-lo-ri-ser une op-tion, il y a 3 mé-thodes prin-ci-pale
-s : l'arbre bi-no-mial (mul-ti-no-mial), la for-mule $\OML/cmm/m/it/10 Black\OT
-1/cmr/m/n/10 &\OML/cmm/m/it/10 Sholes$\T1/phv/m/n/10 ,
+] (./Introduction.tex
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 4.
+) [3] (./Conception.tex
+Overfull \hbox (11.83757pt too wide) in paragraph at lines 3--3
+[]\T1/phv/b/n/17.28 Conception et dé-ve-lop-pe-ment de mo-dèle d'ap-pren-tis-sa
+ge 
  []
 
-<Discontinuite.png, id=40, 382.5492pt x 163.812pt>
-File: Discontinuite.png Graphic file (type png)
- <use Discontinuite.png>
-Package pdftex.def Info: Discontinuite.png used on input line 40.
-(pdftex.def)             Requested size: 483.69687pt x 207.13156pt.
+) [4] (./Results.tex) [5] (./Prospectives.tex) [6] (./Conclusion.tex) [7]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 52.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 52.
 
-[3 <./Discontinuite.png>] <arbre.png, id=50, 476.0184pt x 361.8318pt>
-File: arbre.png Graphic file (type png)
-
-<use arbre.png>
-Package pdftex.def Info: arbre.png used on input line 54.
-(pdftex.def)             Requested size: 483.69687pt x 367.67775pt.
- [4 <./arbre.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 63--64
-
- []
-
-\openout6 = `skeleton.pyg'.
-
-(./_minted-skeleton/default-pyg-prefix.pygstyle)
-(./_minted-skeleton/default.pygstyle)
-(./_minted-skeleton/07B109226DFB8C9D671DAA9C8116A86DB9E30FD2442D3F61CC8F6A91D61
-474B4.pygtex)
-\openout6 = `skeleton.pyg'.
-
-
-(./_minted-skeleton/74D9A83219CABAAB06A69FD318873F33B9E30FD2442D3F61CC8F6A91D61
-474B4.pygtex)
-Underfull \hbox (badness 10000) in paragraph at lines 65--66
-
- []
-
-\openout6 = `skeleton.pyg'.
-
-
-(./_minted-skeleton/D8440D7FCD3D962B429325CB2D8FFD7EB9E30FD2442D3F61CC8F6A91D61
-474B4.pygtex)
-\openout6 = `skeleton.pyg'.
-
-
-(./_minted-skeleton/64ACA63F3282FC061CA043F253479AADB9E30FD2442D3F61CC8F6A91D61
-474B4.pygtex)
-\openout6 = `skeleton.pyg'.
-
-
-(./_minted-skeleton/F9DC35B2D396773CD4082218471D7EA7B9E30FD2442D3F61CC8F6A91D61
-474B4.pygtex)
-Overfull \hbox (2.56401pt too wide) in paragraph at lines 67--68
-\T1/phv/m/n/10 lon-gueur d'une pé-riode ([][][][][][]). Pour ré-cu-pé-rer leur 
-sous-jacent, nous al-lons di-rec-te-ment
- []
-
-<timesteps.png, id=57, 265.4718pt x 271.2534pt>
-File: timesteps.png Graphic file (type png)
- <use timesteps.png>
-Package pdftex.def Info: timesteps.png used on input line 72.
-(pdftex.def)             Requested size: 338.58632pt x 345.96146pt.
-\openout6 = `skeleton.pyg'.
-
-
-(./_minted-skeleton/1CDA25549A57B954EBA68E906AC82F7BB9E30FD2442D3F61CC8F6A91D61
-474B4.pygtex)
-\openout6 = `skeleton.pyg'.
-
-
-(./_minted-skeleton/D5B5F2F9A9E37B194B6DB9FB7EF5DE9CB9E30FD2442D3F61CC8F6A91D61
-474B4.pygtex)
-\openout6 = `skeleton.pyg'.
-
-
-(./_minted-skeleton/0D13C8CD2168B641E343C5C7DDFB9265B9E30FD2442D3F61CC8F6A91D61
-474B4.pygtex)
-\openout6 = `skeleton.pyg'.
-
-
-(./_minted-skeleton/D13C834E90651CB902E08E8CFA05D2EFB9E30FD2442D3F61CC8F6A91D61
-474B4.pygtex)
-Overfull \hbox (7.49959pt too wide) in paragraph at lines 78--79
-[][][][][][] \T1/phv/m/n/10 pour re-pré-sen-ter cet ins-tant. Nous avons re-tir
-é le sous-jacent de ce mo-ment en ap-pli-quant
- []
-
-[5 <./timesteps.png>] <optionParam.png, id=66, 203.3196pt x 96.36pt>
-File: optionParam.png Graphic file (type png)
-
-<use optionParam.png>
-Package pdftex.def Info: optionParam.png used on input line 89.
-(pdftex.def)             Requested size: 338.58632pt x 160.47214pt.
- <CRR.png, id=67, 202.8378pt x 141.1674pt>
-File: CRR.png Graphic file (type png)
- <use CRR.png>
-Package pdftex.def Info: CRR.png used on input line 103.
-(pdftex.def)             Requested size: 40.56683pt x 28.23297pt.
-
-<CR.png, id=68, 409.53pt x 279.0425pt>
-File: CR.png Graphic file (type png)
- <use CR.png>
-Package pdftex.def Info: CR.png used on input line 109.
-(pdftex.def)             Requested size: 81.90454pt x 55.8075pt.
-
-<JR.png, id=69, 281.05pt x 173.64874pt>
-File: JR.png Graphic file (type png)
- <use JR.png>
-Package pdftex.def Info: JR.png used on input line 120.
-(pdftex.def)             Requested size: 56.209pt x 34.72913pt.
-
-<JRo.png, id=70, 409.53pt x 279.0425pt>
-File: JRo.png Graphic file (type png)
- <use JRo.png>
-Package pdftex.def Info: JRo.png used on input line 126.
-(pdftex.def)             Requested size: 81.90454pt x 55.8075pt.
-
-<EQPB.png, id=71, 281.05pt x 175.65625pt>
-File: EQPB.png Graphic file (type png)
- <use EQPB.png>
-Package pdftex.def Info: EQPB.png used on input line 139.
-(pdftex.def)             Requested size: 56.209pt x 35.13062pt.
-
-<Additive.png, id=72, 409.53pt x 279.0425pt>
-File: Additive.png Graphic file (type png)
- <use Additive.png>
-Package pdftex.def Info: Additive.png used on input line 145.
-(pdftex.def)             Requested size: 81.90454pt x 55.8075pt.
- [6 <./optionParam.png> <./CRR.png> <./CR.png> <./JR.png> <./JRo.png>]
-<TRIGEORGIS.png, id=85, 281.05pt x 172.645pt>
-File: TRIGEORGIS.png Graphic file (type png)
- <use TRIGEORGIS.png>
-Package pdftex.def Info: TRIGEORGIS.png used on input line 158.
-(pdftex.def)             Requested size: 56.209pt x 34.52838pt.
-
-<Trigeor.png, id=86, 409.53pt x 279.0425pt>
-File: Trigeor.png Graphic file (type png)
- <use Trigeor.png>
-Package pdftex.def Info: Trigeor.png used on input line 164.
-(pdftex.def)             Requested size: 81.90454pt x 55.8075pt.
-
-<Tian.png, id=87, 221.1462pt x 143.5764pt>
-File: Tian.png Graphic file (type png)
- <use Tian.png>
-Package pdftex.def Info: Tian.png used on input line 177.
-(pdftex.def)             Requested size: 44.22844pt x 28.71477pt.
-
-<Tia.png, id=88, 415.5525pt x 279.0425pt>
-File: Tia.png Graphic file (type png)
- <use Tia.png>
-Package pdftex.def Info: Tia.png used on input line 183.
-(pdftex.def)             Requested size: 83.10902pt x 55.8075pt.
-
-<Joshi.png, id=89, 281.05pt x 175.65625pt>
-File: Joshi.png Graphic file (type png)
- <use Joshi.png>
-Package pdftex.def Info: Joshi.png used on input line 196.
-(pdftex.def)             Requested size: 56.209pt x 35.13062pt.
-
-<Josh.png, id=90, 409.53pt x 279.0425pt>
-File: Josh.png Graphic file (type png)
- <use Josh.png>
-Package pdftex.def Info: Josh.png used on input line 202.
-(pdftex.def)             Requested size: 81.90454pt x 55.8075pt.
-
-<LEISEN.png, id=91, 281.05pt x 172.645pt>
-File: LEISEN.png Graphic file (type png)
- <use LEISEN.png>
-Package pdftex.def Info: LEISEN.png used on input line 215.
-(pdftex.def)             Requested size: 56.209pt x 34.52838pt.
-
-<Leisen_Reimer.png, id=92, 409.53pt x 279.0425pt>
-File: Leisen_Reimer.png Graphic file (type png)
- <use Leisen_Reimer.png>
-Package pdftex.def Info: Leisen_Reimer.png used on input line 221.
-(pdftex.def)             Requested size: 81.90454pt x 55.8075pt.
-
-[7 <./EQPB.png> <./Additive.png> <./TRIGEORGIS.png> <./Trigeor.png> <./Tian.png
-> <./Tia.png> <./Joshi.png> <./Josh.png>] [8 <./LEISEN.png> <./Leisen_Reimer.pn
-g>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 227.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 227.
- (./skeleton.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 227.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 227.
-Package rerunfilecheck Info: File `skeleton.out' has not changed.
-(rerunfilecheck)             Checksum: A1E924ED5137C4DD11EEA2F8BD61E5C1;224.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
-runsystem(rm skeleton.pyg)...executed.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 227.
+(./report_S5.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 52.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 52.
+Package rerunfilecheck Info: File `report_S5.out' has not changed.
+(rerunfilecheck)             Checksum: 18A796F2126BFE9C4E2F4582D60A10AA;953.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 52.
  ) 
 Here is how much of TeX's memory you used:
- 31523 strings out of 492995
- 595143 string characters out of 6132704
- 700276 words of memory out of 5000000
- 34539 multiletter control sequences out of 15000+600000
- 39077 words of font info for 40 fonts, out of 8000000 for 9000
+ 31189 strings out of 492995
+ 588124 string characters out of 6132704
+ 697249 words of memory out of 5000000
+ 34249 multiletter control sequences out of 15000+600000
+ 33749 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,11n,74p,10425b,717s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
-{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
-live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texl
-ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texliv
-e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2
-017/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/201
-7/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2017/texmf
--dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on skeleton.pdf (8 pages, 791672 bytes).
+ 62i,11n,74p,10426b,717s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2017/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/
+2017/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on report_S5.pdf (7 pages, 27078 bytes).
 PDF statistics:
- 148 PDF objects out of 1000 (max. 8388607)
- 95 compressed objects within 1 object stream
- 25 named destinations out of 1000 (max. 500000)
- 135 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 123 PDF objects out of 1000 (max. 8388607)
+ 110 compressed objects within 2 object streams
+ 22 named destinations out of 1000 (max. 500000)
+ 117 words of extra memory for PDF output out of 10000 (max. 10000000)
 
