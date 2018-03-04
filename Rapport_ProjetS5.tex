@@ -1,0 +1,134 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% File Name:       imta_documentation
+%
+% Description:     documentation of the IMT Atlantique LaTeX Template.
+%
+% Note:            /
+%
+% Limitations:     /
+%
+% Errors:          None known
+%
+% Dependencies:    babel
+%				   biblatex
+%                  imta_core
+%                  imta_extra
+%
+% Author:          A. Foucault - armand.foucault@telecom-bretagne.eu
+% Contributors:    B. Porteboeuf - benoit.porteboeuf@telecom-bretagne.eu
+%
+% University :     IMT Atlantique, Brest (France)
+%
+% TeX Environment: TeXLive + pdfLaTeX
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass{article}
+
+\usepackage{imta_core}
+\usepackage{imta_extra}
+\usepackage[utf8]{inputenc}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsmath,mathtools}
+
+\usepackage[english]{babel}
+
+
+
+\author{Wei GE \\ Yi QIAO}
+
+\date{Mars 2018}
+\title{Rapport du projet S5}
+\subtitle{Optimisation d'un portefeuille d'actifs par réseaux neurones}
+
+\subtitle{Encadrant : \\ Didier GUERIOT \\ Jean-Marc Le Caillec}
+
+\imtaSetIMTStyle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%% BEGINNING %%%%%%%%%% 
+\begin{document}
+	
+\imtaMaketitlepage
+
+\tableofcontents
+
+\newpage
+
+\section{Introduction}
+L'importance d'optimiser un portefeuille d'actifs
+L'influence de la crise
+
+\section{Context}
+
+
+\subsection{Problématique}
+Un portefeuille d'actifs est construit par plein d'actions avec les pois différents, les actions sont impacté par plusieurs facteurs comme le secteur, le pays, etc. Pour gérer un portefeuille d'actifs, l'objectif est de maximiser le rendement global, c'est-à-dire qu'il faut être capable de faire la décision d'acheter ou de vendre des actions pour optimiser le rendement de chaque action. Dans le cadre de notre projet, nous avons besoin d’optimiser d'un portefeuille CAC 40. Comme les séries temporelles sont non stationnaires, donc il est très difficile de faire la prédiction pour chaque période.
+
+\subsection{Présentation des données}
+Le portefeuille CAC40 est construit par 49 actions françaises et chaque action a ses comportements complètement différents. Nous avons un fichier qui contient le prix (open, close, high, low) de chaque action pendant presque 15 ans (2000-2015). Pour une série temporelle, si nous avons pris une période trop courte, nous n'avons pas assez d'informations pour faire la prédiction. Par contre, elle n'a pas une forte corrélation pendant une longue période, les données très anciennes ne sont pas utile de prédire la situation actuelle.
+
+Nous avons aussi un fichiers ayant les 13 « technical indicators » calculés à partir de ces séries temporelles. Les TIs se sont situés dans 4 catégories : le volume, la volatilité, la tendance, le monument. Dans un premier temps, nous avons pris tous les 13 TIs, et puis nous avons étudié la corrélation entre eux pour diminuer le nombre de TIs. 
+
+\section{Conception de l'apprentissage ??}
+
+Nous avons trouvé qu'il y a déjà beaucoup de projets sur la prédiction d'une séries temporelle financière. Pour atteindre notre objectif, nous avons proposé le modèle de réseaux neurones pour faire la prédiction. 
+L'entrée et la sortie de notre projet sont très différentes par rapport aux autres projets. Nos entrées sont les 13 TIs, comme nous savions plus de TIs peuvent apporter plus d'informations, mais il y a aussi plus de risques d'avoir trop de redondance. La sortie est le rendement sur un horizon prédéfini, c'est plus difficile de prédire la vraie valeur que la tendance (mettre une seuil d'achat ou de vente).
+
+
+\subsection{Construction de la base d'apprentissage}
+Comme nous avons pris un apprentissage supervisé, nous avons d'abord ajouté les labels pour nos exemples, c'est-à-dire nous avons besoin de calculer le rendement sur un horizon pour chaque exemple de TI en avance. Pour réaliser cette tâche
+
+Pré-traitement de données :
+Les données non normalisées :
+Les données normalisé :
+
+
+\subsection{Choix du modèle}
+Avantage de RN…
+Paramétrage des réseaux neurones : Le nombre de neurones, le nombre de couches cachés learning rate, la fonction d'activation, l'itération... (MLProgressor)
+
+Nous avons utilisé principalement l'algorithme de multi-perception et la gradient descendante.
+Explication schématique :
+
+\subsection{Préparation des scénarios}
+Il est très important de définir les paramètres de prédiction, comme l'horizon de prédiction et la taille de base d'apprentissage. 
+
+Varier sur les scénarios différents (horizon, fenêtre, durée du test, nb TI), Analyser lié au marché, à la crise …
+
+Paramétrage de la base de données : horizon, fenêtre, durée du test, nb TI
+ Les 13 TI : corrélation
+Choix du TI (compare) 
+
+
+
+\section{Résultats}
+
+\subsection{Varier sur les scénarios différents}
+\subsection{Evaluation du modèle}
+\subsection{Difficultés rencontrées}
+
+\begin{imtaCode}{latex}
+\definecolor{imtaGreen}{RGB}{164, 210, 51}
+\end{imtaCode}
+
+
+\section{Prospectives et points à améliorer}
+
+La décision (à seuil, achat, vente, ne rien à faire)
+
+Appliquer à toutes les actions dans le portefeuille
+
+
+\section{Conclusion}
+
+\section{Bibliographie}
+
+\section{Annexe}
+
+\end{document}
+
+%%%%%%%%%% END %%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%% 
