@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.8.20)  4 MAR 2018 16:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.8.20)  5 MAR 2018 03:57
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1726,39 +1726,92 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
 
 ] (./Introduction.tex
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 4.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 9.
 ) [3] (./Conception.tex
-Overfull \hbox (11.83757pt too wide) in paragraph at lines 3--3
-[]\T1/phv/b/n/17.28 Conception et dé-ve-lop-pe-ment de mo-dèle d'ap-pren-tis-sa
-ge 
+Overfull \hbox (24.4795pt too wide) in paragraph at lines 17--18
+\T1/phv/m/n/10 Prin-ci-pa-le-ment, nous avons pris 4 in-di-ca-teurs pour me-su-
+rer notre sys-tème, ils sont l'ho-ri-zon, la taille d'ap-pren-tis-sage,
  []
 
-) [4] (./Results.tex) [5] (./Prospectives.tex) [6] (./Conclusion.tex) [7]
+) [4] (./Results.tex
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+<plot/SE_Trainingset.png, id=102, 603.2136pt x 374.3586pt>
+File: plot/SE_Trainingset.png Graphic file (type png)
+
+<use plot/SE_Trainingset.png>
+Package pdftex.def Info: plot/SE_Trainingset.png used on input line 18.
+(pdftex.def)             Requested size: 120.64058pt x 74.87039pt.
+
+<plot/SE_Trainingset_s.png, id=104, 603.2136pt x 374.3586pt>
+File: plot/SE_Trainingset_s.png Graphic file (type png)
+
+<use plot/SE_Trainingset_s.png>
+Package pdftex.def Info: plot/SE_Trainingset_s.png used on input line 25.
+(pdftex.def)             Requested size: 120.64058pt x 74.87039pt.
+
+Overfull \hbox (6.56912pt too wide) in paragraph at lines 33--34
+[]\T1/phv/m/n/10 En ob-ser-vant les fi-gures ci-dessous, nous re-mar-quons que 
+l'er-reur moyenne pour 120 jours est gé-né-ra-le-ment
+ []
+
+
+Overfull \hbox (9.94795pt too wide) in paragraph at lines 33--34
+\T1/phv/m/n/10 plus pe-tite que les autres cas (sauf la pé-riode de la crise), 
+car une per-iode plus longue contient plus d'in-for-ma-tions
+ []
+
+<plot/ME_Trainingset1.png, id=105, 611.4042pt x 373.395pt>
+File: plot/ME_Trainingset1.png Graphic file (type png)
+
+<use plot/ME_Trainingset1.png>
+Package pdftex.def Info: plot/ME_Trainingset1.png used on input line 40.
+(pdftex.def)             Requested size: 122.27867pt x 74.67767pt.
+
+<plot/ME_Trainingset2.png, id=106, 603.2136pt x 373.395pt>
+File: plot/ME_Trainingset2.png Graphic file (type png)
+
+<use plot/ME_Trainingset2.png>
+Package pdftex.def Info: plot/ME_Trainingset2.png used on input line 47.
+(pdftex.def)             Requested size: 120.64058pt x 74.67767pt.
+ [5 <./plot/SE_Trainingset.png> <./plot/SE_Trainingset_s.png> <./plot/ME_Traini
+ngset1.png> <./plot/ME_Trainingset2.png>])
+[6] (./Prospectives.tex) [7] (./Conclusion.tex) [8]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 52.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 52.
-
-(./report_S5.aux)
+ (./report_S5.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 52.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 52.
 Package rerunfilecheck Info: File `report_S5.out' has not changed.
-(rerunfilecheck)             Checksum: 18A796F2126BFE9C4E2F4582D60A10AA;953.
+(rerunfilecheck)             Checksum: A5EBD129F6D84C2B8BBF3FDE6AF9EFA9;1032.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 52.
  ) 
 Here is how much of TeX's memory you used:
- 31189 strings out of 492995
- 588124 string characters out of 6132704
- 697249 words of memory out of 5000000
- 34249 multiletter control sequences out of 15000+600000
- 33749 words of font info for 38 fonts, out of 8000000 for 9000
+ 31246 strings out of 492995
+ 589174 string characters out of 6132704
+ 699248 words of memory out of 5000000
+ 34292 multiletter control sequences out of 15000+600000
+ 42904 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,11n,74p,10426b,717s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,12n,74p,10426b,717s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2017/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/
-2017/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on report_S5.pdf (7 pages, 27078 bytes).
+exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
+xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texl
+ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texliv
+e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
+/2017/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2017/t
+exmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on report_S5.pdf (8 pages, 347116 bytes).
 PDF statistics:
- 123 PDF objects out of 1000 (max. 8388607)
- 110 compressed objects within 2 object streams
- 22 named destinations out of 1000 (max. 500000)
- 117 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 161 PDF objects out of 1000 (max. 8388607)
+ 135 compressed objects within 2 object streams
+ 26 named destinations out of 1000 (max. 500000)
+ 145 words of extra memory for PDF output out of 10000 (max. 10000000)
 
