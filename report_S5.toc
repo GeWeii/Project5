@@ -1,18 +1,16 @@
-\babel@toc {french}{}
+\select@language {french}
 \contentsline {section}{\numberline {1}Introduction}{3}{section.1}
 \contentsline {subsection}{\numberline {1.1}Probl\IeC {\'e}matique}{3}{subsection.1.1}
 \contentsline {subsection}{\numberline {1.2}Pr\IeC {\'e}sentation de donn\IeC {\'e}es}{3}{subsection.1.2}
 \contentsline {section}{\numberline {2}Conception et d\IeC {\'e}veloppement de mod\IeC {\`e}le}{4}{section.2}
 \contentsline {subsection}{\numberline {2.1}Construction de la base d\IeC {\textquoteright }apprentissage}{4}{subsection.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}Pr\IeC {\'e}-traitement de donn\IeC {\'e}es}{4}{subsubsection.2.1.1}
-\contentsline {subsubsection}{\numberline {2.1.2}Param\IeC {\'e}trage de la base d'apprentissage}{4}{subsubsection.2.1.2}
 \contentsline {subsection}{\numberline {2.2}Choix du mod\IeC {\`e}le}{4}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}Pr\IeC {\'e}paration des sc\IeC {\'e}narios}{4}{subsection.2.3}
-\contentsline {section}{\numberline {3}R\IeC {\'e}sultats obtenus et analyse}{6}{section.3}
-\contentsline {subsection}{\numberline {3.1}R\IeC {\'e}sultats de diff\IeC {\'e}rents sc\IeC {\'e}narios}{6}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}Variation de taille d'apprentissage}{6}{subsubsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.2}Variation de l'horizon}{7}{subsubsection.3.1.2}
-\contentsline {subsection}{\numberline {3.2}Evaluation du mod\IeC {\`e}le}{7}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Difficult\IeC {\'e}s rencontr\IeC {\'e}es}{7}{subsection.3.3}
-\contentsline {section}{\numberline {4}Prospectives et points \IeC {\`a} am\IeC {\'e}liorer}{8}{section.4}
-\contentsline {section}{\numberline {5}Conclusion}{9}{section.5}
+\contentsline {section}{\numberline {3}R\IeC {\'e}sultats obtenus et analyse}{5}{section.3}
+\contentsline {subsection}{\numberline {3.1}R\IeC {\'e}sultats de diff\IeC {\'e}rents sc\IeC {\'e}narios}{5}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Variation de taille d'apprentissage}{5}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Variation de l'horizon}{6}{subsubsection.3.1.2}
+\contentsline {subsection}{\numberline {3.2}Evaluation du mod\IeC {\`e}le}{6}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Difficult\IeC {\'e}s rencontr\IeC {\'e}es}{6}{subsection.3.3}
+\contentsline {section}{\numberline {4}Prospectives et points \IeC {\`a} am\IeC {\'e}liorer}{7}{section.4}
+\contentsline {section}{\numberline {5}Conclusion}{8}{section.5}
