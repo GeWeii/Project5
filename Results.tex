@@ -4,7 +4,9 @@
 \subsection{Résultats de différents scénarios}
 
 \subsubsection{Variation de taille d'apprentissage}
-Comme nous travaillons sur des séries temporelles, qui ne sont pas stationnaires, nous nous intéressons à l'effet de la taille d'apprentissage sur la précision de la prédiction du rendement de l'action. Nous avons réalisé des tests sur l'action Renault dans l'indice CAC40.\\
+
+\paragraph{Test de validation}
+Comme nous travaillons sur des séries temporelles, qui ne sont pas stationnaires, nous nous intéressons à l'effet de la taille d'apprentissage sur la précision de la prédiction du rendement de l'action. Nous avons réalisé des tests sur l'action Renault dans l'indice CAC40.
 
 Sur la figure \ref{fig:SE_Trainingset}, nous observons un très grand pic au début d'octobre 2008 avec une taille d'apprentissage de 120 jours (6 mois), juste après le début de la crise mi-septembre. Toutefois, ce pic est absent sur les autres courbes. Cela signifie que notre modèle est capable de détecter le début de la période de la crise, puisqu'une fois que celle-ci est arrivée, la tendance du marché est brutalement rompue. Dans ce cas, apprendre sur les données des 6 derniers mois n'est pas une bonne approche pour la prédiction du rendement. En revanche, apprendre sur une période plus courte est plus efficace pour ne prendre en compte que les informations intéressantes de l'évolution du marché.\\
 
@@ -51,6 +53,9 @@ En observant les figures ci-dessous, nous remarquons que l'erreur moyenne pour 1
 \caption{Erreur Moyenne de la prédiction du rendement de Renault à un horizon de 20 jours (1 mois) en fonction de la taille d'apprentissage}
 \label{fig:ME_Trainingset}
 \end{figure}
+
+\paragraph{Test de prédiction}
+
 
 
 \subsubsection{Variation de l'horizon}
@@ -125,11 +130,3 @@ Pour comparer l'impact de l'horizon sur les périodes différentes, nous avons a
 
 MSE : $ E((V_{true} - V_{pred})^2) $
 
-\subsection{Difficultés rencontrées}
-
-
-L’apprentissage a pris trop de temps.
-
-Trop de scénarios
-
-Bcp d’actions
