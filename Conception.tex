@@ -2,6 +2,8 @@
 
 \section{Conception et développement de modèle}
 
+Nous avons trouvé qu’il y a déjà plein de projets sur la prédiction d’une séries temporelle financière. Les investisseurs ont pris beaucoup de modèles différents pour la prédiction du prix d'action basée sur les informations historiques. Ils voudraient bien savoir la hausse et la baisse du marché financier pendant une période. Maintenant, il y a plusieurs techniques pour réaliser cette tâche, comme support vector machines (SVMs), case-based reasoning (CBR) et artificial neural networks (ANNs). [Financial time series forecasting using support vector machines, Kyoung-jae Kim] \\
+
 La prédiction du prix d'une action ou son rendement par une série temporelle financière fait l'objet de nombreuse recherches. Pour atteindre notre objectif, nous avons proposé le modèle de réseaux de neurones pour faire la prédiction. L’entrée et la sortie de notre projet sont très différentes par rapport aux autres projets. Les entrées sont les 13 TIs, comme nous le savons, avoir plus de TIs permet d'obtenir plus d’informations, mais il y a aussi plus de risques d’avoir trop de redondances en prenant plusieurs TIs de la même catégorie. La sortie est le rendement à un horizon prédefini, il est plus difficile de prédire la vraie valeur que la tendance (mettre une seuil comme signal d’achat ou de vente). Dans cette partie, nous présentons la façon de construction de la base d'apprentissage, le pré-traitement sur les données d'origines et les paramètres de la base d'apprentissage. 
 
 \subsection{Construction de la base d’apprentissage}
@@ -13,39 +15,72 @@ La base d'apprentissage en entrée du réseau de neurones est composée de patte
 
 Les données de 13 TIs sont sur des échelles différentes. Dans un premier temps, nous avons utilisé directement ces données calculées, parce que nous avions supposé que notre modèle de réseau de neurones est capable de s'adapter pour les normaliser, cela signifie que les grandes valeurs ne vont pas être considérées comme plus importantes que les petites. Cependant, quand nous avons fait le premier test sur ces données, nous avons eu un résultat qui n’était pas idéal. Le réseau de neurones n'a pas réussi à apprendre l'évolution de la courbe de rendement et la prédcition est loin d'être bonne. Ensuite, nous avons normalisé ces entrées en utilisant la formule $\frac{V-V_{min}}{V_{max}-V_{min}}$, ainsi les valeus de 13 TIs ont été ramenées dans une fourchette de [0,1]. Dans ce cas, le poids attribué à chaque TI dont le réseau tient compte est correct. Après avoir appliqué la normalisation, le résultat est meilleur et la valeur de prédiction s'est approchée vers la vraie valeur.
 
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.9\linewidth, scale=0.2]
+{plot/non_norma.png}
+\caption{Les données non normalisés}
+\label{fig:Non_normalise}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.9\linewidth, scale=0.2]
+{plot/norma.png}
+\caption{Les données normalisés}
+\label{fig:Normalisé}
+\end{subfigure}
+\caption{Comparason entre les données non normalisés et normalisés}
+\label{fig: normalisation}
+\end{figure}
+
 \subsubsection{Paramétrage de la base d'apprentissage}
 
-Pour notre projet, il faut aussi faire varier les paramètres différents pour construire la base d'apprentissage, qui sert à tester des différents scénarios. Nous prenons principalement 4 paramètres pour comparer le résultat de chaque scénario : l'horizon, la taille d'apprentissage, la durée du test et le nombre de TI. Pour lancer des tests sur les différents scénarios, nous faisons chaque fois varier seulement un paramètre afin de trouver la meilleure combinaison de paramètres.\\
+Pour notre projet, il faut aussi faire varier les paramètres différents pour construire la base d'apprentissage, qui sert à tester des différents scénarios.Nous prenons principalement 4 paramètres pour comparer le résultat de chaque scénario : l'horizon, la taille d'apprentissage, la durée du test et le nombre de TI. Pour lancer des tests sur les différents scénarios, nous faisons chaque fois varier seulement un paramètre afin de trouver la meilleure combinaison de paramètres.\\
 
-Nous avons pris tous les 13 TIs au début de notre projet, nous voudrons collecter plus d’informations pour faire la prédiction, nous avons considéré que cette combinaison de TIs est plus robuste. Pour savoir si le nombre de TIs a un impact sur la performance de notre système, nous avons diminué le nombre de TIs et refait des tests avec la dimension réduite en entrée du réseau. Les nombres de TIs que nous avons choisi sont 13, 12 (élimination d'un TI aléatoire) et 4 (un TI par catégorie).
+Comme nous avons besoin de prédire le rendement dans un horizon, il faut prendre horizon plus de prix pour calculer les derniers rendements dans la base d'apprentissage. Nous avons commencé le test après un décalage de horizon, c'est-à-dire que nous ne pouvons pas utiliser les données just après pour faire le test. Dans notre projet, nous pouvons considérer la période de décalage comme la base de validation. La figure \ref{fig:BA} est une illustration plus claire : \\
 
-   	
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.9\linewidth, scale=0.2]
+	{plot/BA.png}
+	\caption{La construction de la base}
+	\label{fig:BA}
+\end{figure}
+
+Nous avons pris tous les 13 TIs au début de notre projet, nous voudrons collecter plus d’informations pour faire la prédiction, nous avons considéré que cette combinaison de TIs est plus robuste. Pour savoir si le nombre de TIs a un impact sur la performance de notre système, nous avons diminué le nombre de TIs et refait des tests avec la dimension réduite en entrée du réseau. Les nombres de TIs que nous avons choisi sont 13, 12 (élimination d'un TI) et 4 (un TI par catégorie).
+
 \subsection{Choix du modèle}
 
 De nombreuses études ont largement admis que la non-linéarité existe sur les marchés financiers et que les réseaux de neurones peuvent être efficacement utilisés pour découvrir cette relation. Les modèles de réseaux de neurones pour l'estimation sont ensuite examinés pour leur capacité à fournir une prévision efficace des valeurs futures.\\
 
-Nous avons utilisé l'algorithme de perceptron multicouche à rétropropagation. Le perceptron multicouche est un type de réseau organisé par plusieurs couches, chaque couche est constituée d'un nombre variable de neurones, les neurones de la dernière couche étant les sorties du système global. Dans notre cas, l'entré de reseau est les TIs et la sortie est le rendement. L'algoritnme de rétropropagation du gradient déscendant est pour minimiser l'erreur afin de converger. La figure \ref{fig:RN} représente la structure de notre réseau de neurones :
+Nous avons utilisé l'algorithme de perceptron multicouche à rétropropagation. Le perceptron multicouche est un type de réseau organisé par plusieurs couches, chaque couche est constituée d'un nombre variable de neurones, les neurones de la dernière couche étant les sorties du système global. Dans notre cas, l'entré de reseau est les TIs et la sortie est le rendement. L'algoritnme de rétropropagation du gradient déscendant est pour minimiser l'erreur afin de converger. Les figures \ref{fig:RN} et \ref{fig:base} représentent la structure de notre réseau de neurones et nos examples d'entrées en format matriciel :\\
 
 \begin{figure}[H]
-\centering
-\includegraphics[width=.9\linewidth, scale=0.2]
-{plot/RN.png}
-\caption{Le schéma du réseau de neurones}
-\label{fig:RN}
+	\centering
+	\begin{subfigure}{.5\textwidth}
+	\includegraphics[width=.9\linewidth, scale=0.2]
+	{plot/RN.png}
+	\caption{La structure de réseaux neurones}
+	\label{fig:RN}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+	\centering
+	\includegraphics[width=.9\linewidth, scale=0.2]
+	{plot/base.png}
+	\caption{L'entrée de base d'apprentissage}
+	\label{fig:base}
+	\end{subfigure}
+\caption{L'influence de l'horizon sur en vue global sur 15 ans}
+\label{fig:ME_Trainingset}
 \end{figure}
 
-Pour être plus clair, nous présentons les patterns d'entrée en format matriciel : 
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=.9\linewidth, scale=0.2]
-{plot/base.png}
-\caption{L'entrée de base d'apprentissage}
-\label{fig:base}
-\end{figure}
-
+Dans le modèle de réseaus neurones, nous avons besoin de choisir le nombre de neurones, le nombre de couches cachés, le taux d'apprentissage, la fonction d’activation et le nombre d'itération. Dans notre projet, nous avons pris une seule couche cachée avec 25 neurones et nous avons paramétré le taux d'apprentissage initial égale à 0,1. Nous avons prix la fonction sigmoid comme la fonction d'activation $ f(x) = /frac{1}{(1 + exp^{-x}} $ et notre nombre d'itération est 80000.
 
 \subsection{Préparation des scénarios}
+
+Pour lancer les simulations différentes, nous avons d'abord changé seulement un indicateur chaque fois sur les tests différents. Et puis, nous pouvons tester sur le cas où nous pouvons changer 2 ou 3 indicateurs pour trouver le meilleur combinaison.\\ 
 
 
 
