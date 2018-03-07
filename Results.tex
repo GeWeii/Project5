@@ -1,16 +1,18 @@
 
-\section{Résultats obtenus et analyse}
+\section{Résultats obtenus et analyse de l'action Renault}
  
 \subsection{Résultats de différents scénarios}
 
 \subsubsection{Variation de taille d'apprentissage}
 
 \paragraph{Test de validation}
-Comme nous travaillons sur des séries temporelles, qui ne sont pas stationnaires, nous nous intéressons à l'effet de la taille d'apprentissage sur la précision de la prédiction du rendement de l'action. Nous avons réalisé des tests sur l'action Renault dans l'indice CAC40.
+Comme nous travaillons sur des séries temporelles, qui ne sont pas stationnaires, nous nous intéressons à l'effet de la taille d'apprentissage sur la précision de la prédiction du rendement de l'action. Tout d'abord, nous avons réalisé des tests sur la base de validation de l'action Renault. Nous avons deux indicateurs pour évaluer notre modèle : l'erreur quadratique et l'erreur moyenne. \\
 
-Sur la figure \ref{fig:SE_Trainingset}, nous observons un très grand pic au début d'octobre 2008 avec une taille d'apprentissage de 120 jours (6 mois), juste après le début de la crise mi-septembre. Toutefois, ce pic est absent sur les autres courbes. Cela signifie que notre modèle est capable de détecter le début de la période de la crise, puisqu'une fois que celle-ci est arrivée, la tendance du marché est brutalement rompue. Dans ce cas, apprendre sur les données des 6 derniers mois n'est pas une bonne approche pour la prédiction du rendement. En revanche, apprendre sur une période plus courte est plus efficace pour ne prendre en compte que les informations intéressantes de l'évolution du marché.\\
+Sur la figure \ref{fig:SE_Trainingset} qui représente l'erreur quadratique de la prédiction, nous observons un très grand pic au début d'octobre 2008 avec une taille d'apprentissage de 120 jours (6 mois), juste après le début de la crise mi-septembre. Toutefois, ce pic est absent sur les autres courbes. Cela signifie que notre modèle est capable de détecter le début de la période de la crise, puisqu'une fois que celle-ci est arrivée, la tendance du marché est brutalement rompue. Dans ce cas, apprendre sur les données des 6 derniers mois n'est pas une bonne approche pour la prédiction du rendement. En revanche, apprendre sur une période plus courte est plus efficace pour ne prendre en compte que les informations intéressantes de l'évolution du marché.\\
 
-Dans les autres périodes, nous pouvons constater que l'erreur quadratique de la prédiction du rendement est proche de zéro dans les quatre cas.
+Après la crise de 2008, c'est une période de grande récession, la remontée du marché est donc super lente. Nous pouvons aussi voir que dans cette figure, un autre pic se trouve en automne en 2011. À partir de premier semestre de 2011, Renault a souffert plusieurs mois d'affilée le problème d'approvisonnement à cause du thusnami au Japon qui a empêché la construction et la vente de voitures. Jusqu'au troisième semestre de 2011, Renault a réalisé la majorité de sa vente en Europe, qui était déjà un marché mature dont le constructeur allemand Volkswagen représentait la plupart. En autonme, Renault a bénéficié de l'alliance avec Nissan pour s'internationnaliser et enfin rebondi ses ventes. Renault est retournée dans une situation normale.\\
+
+Dans les autres périodes, nous pouvons constater que l'erreur quadratique de la prédiction du rendement est proche de zéro dans les quatre cas, et celle du scénario de la taille d'apprentissage de 120 jours est stable et plus proche de zéro .
 
 \begin{figure}[H]
 \centering
@@ -32,7 +34,6 @@ Dans les autres périodes, nous pouvons constater que l'erreur quadratique de la
 \label{fig:SE_Trainingset}
 \end{figure}
 
-En observant les figures ci-dessous, nous remarquons que l'erreur moyenne pour 120 jours est généralement plus petite que les autres cas (sauf la période de la crise), car une periode plus longue contient plus d'informations et peut mieux présenter la tendance du marché. Au contraire, une période plus courte est plus bruitée.
 
 \begin{figure}[H]
 \centering
@@ -50,12 +51,54 @@ En observant les figures ci-dessous, nous remarquons que l'erreur moyenne pour 1
 \caption{Erreur moyenne pour 120 et 20 jours}
 \label{fig:ME_Ts2}
 \end{subfigure}
-\caption{Erreur Moyenne de la prédiction du rendement de Renault à un horizon de 20 jours (1 mois) en fonction de la taille d'apprentissage}
+\caption{Test de validation : Erreur moyenne de la prédiction du rendement de Renault à un horizon de 20 jours (1 mois) en fonction de la taille d'apprentissage}
 \label{fig:ME_Trainingset}
 \end{figure}
 
-\paragraph{Test de prédiction}
 
+En observant la figure \ref{fig:ME_Trainingset} qui représente l'erreur moyenne de la prédiction de chaque période et la figure \ref{fig:SE_Trainingset}, nous remarquons que l'erreur moyenne pour 120 jours est généralement plus petite que les autres cas (sauf la période de la crise), car une periode plus longue contient plus d'informations et peut mieux présenter la tendance du marché. Au contraire, une période plus courte est plus bruitée. \\
+
+Nous avons fait varier la taille d'apprentissage de cette façon également sur la base de test pour voir si les résultats sont cohérents, qui sont détaillés dans le paragraphe \ref{sec:tp} suivant.\\
+
+
+
+\paragraph{Test de prédiction}\label{sec:tp}
+
+Les résultats de prédiction sur la base de test sont présentés en figure \ref{fig:tp_mse}. Ils nous montrent que l'erreur quadratique de la prédiction est toujours grande autour de la crise de 2008, ainsi que la récession de 2011. C'est donc cohérent avec les résultats des tests de validation. En plus de cela, un nouveau pic appraît en 2013, puisque à ce moment là, il y avait une forte croissance du marché Automibile mondial, et que Renault a réussi à soutenir sa présence à l'international et a réalisé beaucoup plus de ventes hors Europe par rapports aux périodes précedentes.\\
+
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.9\linewidth, scale=0.2]
+{plot/Predict1.png}
+\caption{Erreur quadratique pour 120 et 60 jours}
+\label{fig:p1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.9\linewidth, scale=0.2]
+{plot/Predict2.png}
+\caption{Erreur quadratique pour 120 et 20 jours}
+\label{fig:p2}
+\end{subfigure}
+\caption{Test de prédiction : Erreur quadratique de la prédiction du rendement de Renault à un horizon de 20 jours (1 mois) en fonction de la taille d'apprentissage}
+\label{fig:tp_mse}
+\end{figure}
+
+En général, avec une base d'apprentissage de 120 jours, nous obtenons les meilleurs résultats sur des périodes calmes. Pour cette raison, nous avons réalisé des tests de prédiction avec une taille d'apprentissage égale à 120 jours, qui sont présentés dans les sections suivantes ainsi que les tests de tpus les autres scénarios. Cependant, sur des périodes perturbées, la prédiction avec l'apprentissage de 60 jours offre un meilleur résultat, qui est capable de capturer plus d'informations récentes.\\
+
+Comme indiqué en figure \ref{fig:test}, l'erreur quadratique de tests est plus grande que celle de validation, parce que la base de test est décalée de la distance temporelle d'un horizon, 20 jours dans notre cas. Il est donc plus difficile de prédire avec une base d'apprentissage qui contient que des informations de 20 jours avant.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=.9\linewidth, scale=0.2]
+{plot/VP.png}
+\caption{Comparaison de tests de prédiction et de validation}
+\label{fig:test}
+\end{figure}
 
 
 \subsubsection{Variation de l'horizon}
