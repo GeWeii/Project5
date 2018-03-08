@@ -102,9 +102,9 @@ Comme indiqué en figure \ref{fig:test}, l'erreur quadratique de tests est plus 
 
 \subsubsection{Variation de l'horizon}
 
-Nous discutons l'influence de l'horizon de prédiction dans cette partie, pour déterminer la fréquence de la gestion d'un portefeuille, il faut bien choisir un horizon de prédiction. Si nous prenons un horizon très court, ça va générer un coût opérationel très élevé, parce que nous avons besoin de prendre plus de temps et plus de ressources. Par contre, si nous définissons un horizon plus long, il est plus difficile de prédire la valeur très future, donc ça va dégrader la performance du modèle. \\
+Nous discutons l'influence de l'horizon de prédiction dans cette partie. Pour déterminer la fréquence de la gestion d'un portefeuille, il faut bien choisir un horizon de prédiction. Si nous prenons un horizon très court, ça va générer un coût opérationel très élevé, parce que nous avons besoin de prendre plus de temps et plus de ressources. Au contraire, si nous définissons un horizon plus long, il est plus difficile de prédire la valeur très éloignée, donc ça va dégrader la performance du modèle. \\
 
-Nous avons fixé la taille de base d'apprentissage à 120 jours (6 mois) et la taille de base de test à 20 jours (1 mois), nous avons pris tout les 13 TIs, nous n'avons changé que l'horizon de prédiction. Nous avons préparé 6 tests pour savoir l'influence des horizons différents, nous avons varié l'horizon sur 5 jours (1 semaine), 10 jours (2 semaines), 20 jours (1 mois), 40 jours (2 mois), 60 jours (3 mois), 120 jours (6 mois). \\
+Nous avons fixé la taille de base d'apprentissage à 120 jours (6 mois) et la taille de base de test à 20 jours (1 mois), nous avons pris tout les 13 TIs, nous n'avons changé que l'horizon de prédiction. Nous avons préparé 6 tests pour savoir l'influence des horizons différents, nous avons fait varier l'horizon sur 5 jours (1 semaine), 10 jours (2 semaines), 20 jours (1 mois), 40 jours (2 mois), 60 jours (3 mois), 120 jours (6 mois). \\
 
 \begin{figure}[H]
 	\centering
@@ -125,14 +125,14 @@ Nous avons fixé la taille de base d'apprentissage à 120 jours (6 mois) et la t
 \label{fig:Horizon_global}
 \end{figure}
 
-Nous pouvons obtenir le résultat global sur 15 ans dans la figure \ref{fig:Horizon}. Suivi l'augementation de l'horizon, nous pouvons constater que la prériode défavorable est plus fluctuante et il y a plus de pics sur la courbe. Pendant la période stable, les erreurs moyennes quadratiques sont plus proche de zéro quand l'horizon est plus petit. En comparant avec l'évolution du prix d'action Renault, nous avons trouvé que quand il y a une baisse évidente, les erreure de prédictions sont aussi plus grandes. \\
+Nous pouvons voir le résultat global sur 15 ans en figure \ref{fig:Horizon}. Suivi l'augmentation de l'horizon, nous pouvons constater que la prériode défavorable est plus fluctuante et il y a plus de pics sur la courbe. Pendant la période stable, les erreurs moyennes quadratiques sont plus proche de zéro quand l'horizon est plus petit. En comparant avec l'évolution du prix d'action Renault, nous trouvons que quand il y a une baisse évidente, les erreurs de prédictions sont aussi plus grandes. \\
 
-Sur la figure \ref{fig:Prix_action}, il y a 5 baisses plus évidentes sur la courbe, elles sont dans le septembre 2001, le mars 2003, le septembre 2008, l'octobre 2011 et le novembre 2014. Nous avons fait des recherches pour expliquer les baisses du cours. A la suite des événements du 11 septembre 2001, Renault atteint le 21 septembre son point bas de l'année à 26,01 euros.\footnote{Rapport annuel d’activité
+Sur la figure \ref{fig:Prix_action}, il y a 5 baisses plus évidentes sur la courbe, elles sont dans septembre 2001, mars 2003, septembre 2008, octobre 2011 et novembre 2014. Nous avons fait des recherches pour expliquer les baisses du cours. A la suite des événements du 11 septembre 2001, Renault a atteint le 21 septembre son point bas de l'année à 26,01 euros.\footnote{Rapport annuel d’activité
 Renault 2001} Le titre Renault connaît un plus bas le 12 mars 2003 à 29,51 euros, suivant le mouvement de baisse du secteur automobile, pénalisé par les incertitudes économiques et géopolitiques et affecté par le recul des performances commerciales du début d’année.\footnote{Rapport annuel d’activité
 Renault 2003} Le septembre 2008 est la crise financière mondiale, le prix d'action de Renault a été beaucoup influencé. Comme nous avons dit dans la section précédente, il y a une recession dans l'année 2011. Renault a accusé une baisse globale de 5 pourcents de ses ventes en novembre 2014. \footnote{Rapport annuel d’activité Renault 2014} Pendant ces périodes défavorables, la situstion est plus pire, les erreurs de prédictions sont plus grandes. Quand l'horizon est plus long, la courbe est plus perturpée. \\ 
 
 
-Pour comparer l'impact de l'horizon sur les périodes différentes, nous avons aussi fait un zoom sur la période autour de la crise financière de 2008, les figures ci-après vous montre nos résultat. La figure \ref{fig:Prix_crise} est le prix d'action entre 2007 et 2010, nous pouvons trouver qu'à partir du septembre 2007, la courbe commence à baisser progressivement et elle apparait une chute au septembre 2008. Après mars 2009, le prix d'action commence à revenir. La figure \ref{fig:Horizon_crise} nous montre que pendant la crise toutes les prédictions ne sont pas stables, il y a des grandes erreurs de prédiction sur chaque courbe. Par contre, quand l'horizon est plus long, il y a un retard de détection sur la tendance de baisse. Quand l'horizon est 20, ses pics sont plus proche au début de la baisse de cours, pour l'horizon est égale à 60 et 120, il y a toujours un grand décalage avec la date début. Les figures \ref{fig:Horizon_before} et \ref{fig:Horizon_after} sont les prériodes avant et après la crise de 2008, nous pouvons consatater que les erreurs sont négligables par rapports à la prériode de crise. Mais, l'horizon est plus grand, la courbe est plus fluctuante.
+Pour comparer l'impact de l'horizon sur les périodes différentes, nous avons aussi fait un zoom sur la période autour de la crise financière de 2008, les figures ci-après vous montrent nos résultats. La figure \ref{fig:Prix_crise} est le prix d'action entre 2007 et 2010, nous pouvons trouver qu'à partir du septembre 2007, la courbe commence à baisser progressivement et elle apparait une chute au septembre 2008. Après mars 2009, le prix d'action commence à revenir. La figure \ref{fig:Horizon_crise} nous montre que pendant la crise toutes les prédictions ne sont pas stables, il y a des grandes erreurs de prédiction sur chaque courbe. Par contre, quand l'horizon est plus long, il y a un retard de détection sur la tendance de baisse. Quand l'horizon est 20, ses pics sont plus proche au début de la baisse de cours, pour l'horizon est égale à 60 et 120, il y a toujours un grand décalage avec la date début. Les figures \ref{fig:Horizon_before} et \ref{fig:Horizon_after} sont les prériodes avant et après la crise de 2008, nous pouvons constater que les erreurs sont négligables par rapports à la prériode de crise. Mais, l'horizon est plus grand, la courbe est plus fluctuante.
 
 \begin{figure}[H]
 	\centering
@@ -168,13 +168,13 @@ Pour comparer l'impact de l'horizon sur les périodes différentes, nous avons a
 \label{fig:MSE_horizon}
 \end{figure}
 
-Nous avons choisi 20 jours comme l'horizon du rendement, parce que les erreurs moyennes quadratiques de 5, 10 et 20 jours sont relativement faibles par rapport aux celles de 60 et 120 jours, ainsi il n'y a pas trop de retard entre la valeur de prédiction et la vraie valeur. En comparant avec 5 et 10 jours, son courbe n'a pas beaucoup de changement et aussi l'horizon de 20 est plus faisable dans la réalité. Par conséquent, nous prenons l'horizon de 20 jours dans les autres scénarios de test.
+Nous avons choisi 20 jours comme l'horizon du rendement, parce que les erreurs moyennes quadratiques de 5, 10 et 20 jours sont relativement faibles par rapport aux celles de 60 et 120 jours, ainsi il n'y a pas trop de retard entre la valeur de prédiction et la vraie valeur. En comparant avec 5 et 10 jours, sa courbe n'a pas beaucoup de changement et aussi l'horizon de 20 est plus faisable dans la réalité. Par conséquent, nous prenons l'horizon de 20 jours dans les autres scénarios de test.
 
 \subsubsection{Variation de taille de test}
 
-Nous voudrons savoir l'effet de la durée de test, donc nous lançons ce scénario de test pour trouver une taille idéal. Dans les deux scénarios précédents, nous avons fixé la taille de base d'apprentissage à 120 jours et l'horizon de prédiction est 20 jours. Nous les avons gardé dans cette partie, ainsi les 13 TIs. Nous n'avons joué que sur la durée de test, nous avons testé sur 5 jour, 20 jours, 60 jours et 120 jours. \\ 
+Nous voudrons savoir l'effet de la durée de test, donc nous lançons ce scénario de test pour trouver une taille idéale. Dans les deux scénarios précédents, nous avons fixé la taille de base d'apprentissage à 120 jours et l'horizon de prédiction est 20 jours. Nous les avons gardé dans cette partie, ainsi les 13 TIs. Nous n'avons joué que sur la durée de test, nous avons testé sur 5 jour, 20 jours, 60 jours et 120 jours. \\ 
 
-Nous pouvons constatons que plus la taille de test est petite, plus de pics se trouvent dans la courbe de l'erreur. Dans la figure \ref{fig:test_g}, nous trouvons que la courbe de test sur 60 jours est beaucoup plus glissante que les autres courbes et le test sur 5 jours varie plus fréquemment. Par conséquent, nous avons zoomé la date autour de 2008, suivi l'augmentation de la base de test, il y a moindre variation sur l'erreur et chaque pic se tient plus long temps.  \\
+Nous pouvons constatons que plus la taille de test est petite, plus de pics se trouvent dans la courbe de l'erreur. Dans la figure \ref{fig:test_g}, nous trouvons que la courbe de test sur 60 jours est beaucoup plus glissante que les autres courbes et le test sur 5 jours varie plus fréquemment. Par conséquent, nous avons zoomé la date autour de 2008, suivi l'augmentation de la base de test, il y a moins de variation sur l'erreur et chaque pic se tient plus long temps.  \\
 
 \begin{figure}[H]
 	\centering
@@ -195,15 +195,15 @@ Nous pouvons constatons que plus la taille de test est petite, plus de pics se t
 \label{fig:MSE_test}
 \end{figure}
 
-Comme nous voudrons un modèle plus stable, nous ne pouvons pas prender une taille de test trop courte ayant les résultats désorganisés. Cependant, si nous choisissons une base de test très grande, nous aurons des erreurs plus élevées. Par conséquent, nous avons fixer 20 jours pour la base de test, et nous les avons aussi appliqué aux autres scénarios de test.
+Comme nous voudrons un modèle plus stable, nous ne pouvons pas prendre une taille de test trop courte ayant les résultats désorganisés. Cependant, si nous choisissons une base de test très grande, nous aurons des erreurs plus élevées. Par conséquent, nous avons fixé 20 jours pour la base de test, et nous les avons aussi appliqué aux autres scénarios de test.
 
 
 
 \subsubsection{Variation de nombre de TIs}
 
-Les TIs calculés à partir des données historiques se situent dans 4 catégories qui peuvent décrire le mouvement du marché financier par des façons différentes. Dans ce scénario de test, nous voudrons savoir si on peut utiliser moindre TIs pour obtenir une meilleur performance. \\
+Les TIs calculés à partir des données historiques se situent dans 4 catégories qui peuvent décrire le mouvement du marché financier par des façons différentes. Dans ce scénario de test, nous voudrons savoir si on peut utiliser moins de TIs pour obtenir une meilleur performance. \\
 
-Nous avons d'abord calculer la corrélation entre les 13 TIs pour savoir qu'il y a combien de TIs est redundant. La figure \ref{fig:corr} vous donne une vue synthétique sur la corrélation entre les 13 TIs, la couleur plus claire représente une corrélation plus haute. Nous n'avons affiché que les TIs apportés une corrélation superieur à 90 pourcents dans la figure \ref{fig:corr_s}. Nous pouvons trouver que l'indicateur SMA et EMA ont une forte corrélation, donc nous décidons d'éliminer un des deux indicateurs. \\
+Nous avons d'abord calculé la corrélation entre les 13 TIs pour savoir qu'il y a combien de TIs est redondant. La figure \ref{fig:corr} vous donne une vue synthétique sur la corrélation entre les 13 TIs, la couleur plus claire représente une corrélation plus haute. Nous n'avons affiché que les TIs apportés une corrélation superieur à 90 pourcents dans la figure \ref{fig:corr_s}. Nous pouvons trouver que l'indicateur SMA et EMA ont une forte corrélation, donc nous décidons d'éliminer un des deux. \\
 
 \begin{figure}[H]
 	\centering
@@ -224,9 +224,9 @@ Nous avons d'abord calculer la corrélation entre les 13 TIs pour savoir qu'il y
 \label{fig:correlation}
 \end{figure}
 
-Comme les tests précédents, nous avons pris une taille de base d'apprentissage à 120 jours (6 mois), la taille de base de test à 20 jours (1 mois), et l'horizon de prédiction est 20 jours (1 mois). Cette fois, nous ne varions que sur le nombre de TIs, nous avons fait 3 tests sur ce scénario. Nous prenons tous les 13 TIs comme le premier test, et puis nous supprimons l'indicateur EMA pour tester les autres 12 TIs. A la fin, nous tirons 4 indicateurs par catégorie, soit SMA,CCI,BB1,EMV. \\
+Comme les tests précédents, nous avons pris une taille de base d'apprentissage à 120 jours (6 mois), la taille de base de test à 20 jours (1 mois), et l'horizon de prédiction est 20 jours (1 mois). Cette fois, nous ne varions que sur le nombre de TIs, nous avons fait 3 tests sur ce scénario. Nous prenons tous les 13 TIs pour le premier test, et puis nous supprimons l'indicateur EMA pour tester l'ensemble de 12 TIs restants. A la fin, nous tirons 4 indicateurs par catégorie, soit SMA,CCI,BB1,EMV. \\
 
-La figure \ref{fig:TI} vous montre le résltat de test du changement de TIs, selon ce graphique, nous consatons que les trois courbes ont presque le même comportement en vue globale, c'est-à-dire qu'elles sont plus perturbées pendant les périodes défavorables et plus stables dans les périodes calmes. Cependant, nous pouvons trouver que la courbe de 4 indicateurs est plus sensible aux baisses de 2001 et 2003, et les courbes de 13 et 12 indicateurs sont plus sensibles à la crise de 2008. 
+La figure \ref{fig:TI} vous montre le résltat de test du changement de TIs, selon ce graphique, nous constatons que les trois courbes ont presque le même comportement en vue globale, c'est-à-dire qu'elles sont plus perturbées pendant les périodes défavorables et plus stables dans les périodes calmes. Cependant, nous pouvons trouver que la courbe de 4 indicateurs est plus sensible aux baisses de 2001 et 2003, et les courbes de 13 et 12 indicateurs sont plus sensibles à la crise de 2008. 
 
 \begin{figure}[H]
 	\centering
@@ -272,7 +272,7 @@ La figure \ref{fig:TI} vous montre le résltat de test du changement de TIs, sel
 \label{fig:val_test_TI}
 \end{figure}
 
-Nous avons aussi fait un test dans la base d'apprentissage, la figure \ref{fig:val_test_TI} donne les erreurs dans la base de validation et la comparaison entre les deux bases. Nous pouvons trouver que l'amplitude de la courbe en vue globale sur la base de validation est plus petite que celle dans la base de test. Et puis, nous avons aussi fait une comparaison en utilisant le même nombre de TIs dans les deux bases, nous pouvons constater que les pics apparaitrent dans presque les mêmes endroites, mais leur amplitude est complètement différente.
+Nous avons aussi fait un test dans la base d'apprentissage, la figure \ref{fig:val_test_TI} donne les erreurs dans la base de validation et la comparaison entre les deux bases. Nous pouvons trouver que l'amplitude de la courbe en vue globale sur la base de validation est plus petite que celle dans la base de test. Et puis, nous avons aussi fait une comparaison en utilisant le même nombre de TIs dans les deux bases, nous pouvons constater que les pics apparaissent presque aux mêmes endroits, mais leur amplitude est complètement différente.
 
 
 
